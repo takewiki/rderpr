@@ -62,7 +62,7 @@ saleOrder_queryInterId <- function(api_token='BEC6002E-C3AE-4947-AD70-212CF2B421
   so = tsda::import(module_name = 'rderp.sales.saleOrder')
   app = so$SaleOrder(api_token=api_token,
                      meta_token=meta_token)
-  res = app$Query(FBillNo=FBillNo)
+  res = app$QueryInterId(FBillNo=FBillNo)
   return(res)
 }
 
