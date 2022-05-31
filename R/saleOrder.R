@@ -13,8 +13,8 @@ saleOrder_apiSave <- function(api_token='BEC6002E-C3AE-4947-AD70-212CF2B4218B',
                               meta_token="AD64F20D-6063-4E87-81E8-A24C1751D758",
                               FBillNo ='XSDD22050025') {
 
-  so = tsda::import(module_name = 'rderp.sales.saleOrder')
-  app = so$SaleOrder(api_token=api_token,
+  mdl = tsda::import(module_name = 'rderp.sales.saleOrder')
+  app = mdl$SaleOrder(api_token=api_token,
                      meta_token=meta_token)
   res = app$ApiSave(FBillNo=FBillNo)
   return(res)
