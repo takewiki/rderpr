@@ -78,11 +78,18 @@ saleOutStock_BillQuery <- function(api_token='BEC6002E-C3AE-4947-AD70-212CF2B421
 #' saleOutStock_View()
 saleOutStock_View <- function(api_token='BEC6002E-C3AE-4947-AD70-212CF2B4218B',
                                    meta_token="AD64F20D-6063-4E87-81E8-A24C1751D758",
-                              FBillNo ='XSCKD2022050001') {
+                              FBillNo ='XSCKD2022050002') {
   mdl = tsda::import(module_name = 'rderp.sales.saleOutStock')
   app = mdl$SaleOutStock(api_token=api_token,
                          meta_token=meta_token)
   res = app$View(FBillNo=FBillNo)
+  if(res$status){
+    #进入R语言,将结果从列表+字典[{}]转化为数据框
+
+    res$msg <-tsdo::list2d_dataframe(list2D = res$msg)
+
+  }
+
   return(res)
 }
 

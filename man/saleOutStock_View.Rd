@@ -7,7 +7,7 @@
 saleOutStock_View(
   api_token = "BEC6002E-C3AE-4947-AD70-212CF2B4218B",
   meta_token = "AD64F20D-6063-4E87-81E8-A24C1751D758",
-  FBillNo = "XSCKD2022050001"
+  FBillNo = "XSCKD2022050002"
 )
 }
 \arguments{
